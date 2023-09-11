@@ -1,24 +1,69 @@
 document.getElementById("myButton").onclick = function(){
-    var tamanho = document.getElementById("myNumber").value
-    switch (true) {
-        case (tamanho >= 1.50 && tamanho < 1.60):
-            alert("MTB de tamanho 14 ou Speed de tamanho 48");
+    var tamanho = parseFloat(document.getElementById("myNumber").value);
+    var resultadoElement = document.getElementById("resultado");
+    var select = document.getElementById("tipoBicicleta").value;
+    
+    var resultado = "";
+    
+    switch (select) {
+        case "1":
+            if (tamanho <= 1.40){
+                resultado = "Você necessita de um quadro de tamanho personalizado"; 
+            } else if (tamanho >= 1.50 && tamanho < 1.60) {
+                resultado = "O tamanho de quadro ideal para você é o 14";
+            } else if (tamanho >= 1.60 && tamanho < 1.70){    
+                resultado = "O tamanho de quadro ideal para você é o 16";         
+            } else if (tamanho >= 1.70 && tamanho < 1.80){
+                resultado = "O tamanho de quadro ideal para você é o 17 ou 18";
+            } else if (tamanho >= 1.80 && tamanho < 1.90){
+                resultado = "O tamanho de quadro ideal para você é o 19 ou 20";
+            } else if (tamanho >= 1.90 && tamanho < 2.01){
+                resultado = "O tamanho de quadro ideal para você é o 21 ou 22";
+            } else {
+                resultado = "Nenhum resultado";
+            }
             break;
-        case (tamanho >= 1.60 && tamanho < 1.70):
-            alert("MTB de tamanho 16 ou Speed 50, 52, 54");
+        
+        case "2":
+            if (tamanho >= 1.50 && tamanho < 1.60) {
+                resultado = "O tamanho de quadro ideal para você é o 48";
+            } else if (tamanho >= 1.60 && tamanho < 1.70){
+                resultado = "O tamanho de quadro ideal para você é o 50, 52 ou 54";
+            } else if (tamanho >= 1.70 && tamanho < 1.80){
+                resultado = "O tamanho de quadro ideal para você é o 55 ou 56";
+            } else if (tamanho >= 1.80 && tamanho < 1.90){
+                resultado = "O tamanho de quadro ideal para você é o  57 ou 58";
+            } else if (tamanho >= 1.90 && tamanho < 2.01){
+                resultado = "O tamanho de quadro ideal para você é o 60, 61 ou 62";
+            } else if (tamanho >= 2.20){
+                resultado = "Você necessita de um quadro de tamanho personalizado";
+            } else {
+                resultado = "Nenhum resultado";
+            }
             break;
-        case (tamanho >= 1.70 && tamanho < 1.80):
-            alert("MTB de tamanho 17, 18 ou Speed de tamanho 54, 55, 56");
+        
+        case "3":
+            if (tamanho >= 1.50 && tamanho < 1.60) {
+                resultado = "O tamanho de quadro ideal para você é o 48";
+            } else if (tamanho >= 1.60 && tamanho < 1.70){
+                resultado = "O tamanho de quadro ideal para você é o 50, 52 ou 54";
+            } else if (tamanho >= 1.70 && tamanho < 1.80){
+                resultado = "O tamanho de quadro ideal para você é o 55 ou 56";
+            } else if (tamanho >= 1.80 && tamanho < 1.90){
+                resultado = "O tamanho de quadro ideal para você é o 57 ou 58";
+            } else if (tamanho >= 1.90 && tamanho < 2.01){
+                resultado = "O tamanho de quadro ideal para você é o 60 ou 62";
+            } else if (tamanho >= 2.20){
+                    resultado = "Você necessita de um quadro de tamanho personalizado";
+            } else {
+                resultado = "Nenhum resultado";
+            }
             break;
-        case (tamanho >= 1.80 && tamanho < 1.90):
-            alert("MTB de tamanho 19, 20 ou Speed de tamanho 57, 58");
-            break;
-        case (tamanho >= 1.90 && tamanho < 2.01):
-            alert("MTB de tamanho 21, 22 ou Speed de tamanho 60, 62");
-            break;
+        
         default:
-            alert("Nenhum resultado");
-        } 
+            resultado = "Nenhum resultado";
+    } 
 
-   
+    resultadoElement.textContent = resultado;
+
 }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tamanho de Bicicleta</title>
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
@@ -11,22 +12,21 @@
             <h1>Qual o tamanho <br>de Bike</h1>
         </div>
         
-        <label>Por favor, selecione o tipo de bicicleta:</label><br>
+        <label for="tipoBicicleta">Por favor, selecione o tipo de bicicleta:</label><br>
         <select name="tipo" id="tipoBicicleta">
           <option value="1">MTB</option>
           <option value="2">Road</option>
           <option value="3">Fixa</option>
-          <option value="4"selected >Tipo</option>
         </select>
       </p>
-        <label>Por favor, digite sua altura aqui:</label><br>
+        <label for="myNumber">Digite sua altura aqui em metros:</label><br>
         <input type="number" id="myNumber" placeholder="Exemplo 1.75"><br>
       </p>
         <button type="button" id="myButton">Procurar</button>
       </p>
       </p>
         <div class="resultado" aria-label="resultado" tabindex="0">
-        Resultado:
+        Resultado: <p id="resultado"></p>
        </div>     
 
     </div>
